@@ -36,6 +36,7 @@ class GithubPlugin(GObject.Object, Sarah.IExtension):
     def do_activate(self, args, argv):
        url = "https://github.com/search?utf8=✓&q="+' '.join(args)
        webbrowser.open_new_tab(url)
+       return 
 
     def do_deactivate(self):
        pass

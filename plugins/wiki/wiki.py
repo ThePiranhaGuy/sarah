@@ -34,8 +34,8 @@ class WikiPlugin(GObject.Object, Sarah.IExtension):
     object = GObject.property(type=GObject.Object)
 
     def do_activate(self, args, argv):
-        wikipedia.set_lang("de")
-        print(wikipedia.summary(' '.join(args), sentences=2))
+        wikipedia.set_lang("en")
+        print(wikipedia.summary(' '.join(args), sentences=0))
 
     def do_deactivate(self):
         pass

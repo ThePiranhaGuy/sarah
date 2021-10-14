@@ -34,7 +34,7 @@ class WhoisPlugin(GObject.Object, Sarah.IExtension):
     object = GObject.property(type=GObject.Object)
 
     def do_activate(self, args, argv):
-        print(wikipedia.summary(' '.join(args), sentences=2))
+        print(wikipedia.summary(''.join(args), sentences=5))
 
     def do_deactivate(self):
         pass

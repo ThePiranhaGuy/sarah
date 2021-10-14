@@ -36,7 +36,10 @@ class SpeedPlugin(GObject.Object, Sarah.IExtension):
     object = GObject.property(type=GObject.Object)
 
     def do_activate(self, args, argv):
-        os.system("speedtest")
+        try:
+            os.system("speedtest")
+        except Exception as E:
+            print("Error : speedtest is not available. Try installing speedtest from the apt repos?")
 
     def do_deactivate(self):
        pass

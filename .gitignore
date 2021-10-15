@@ -3,3 +3,4 @@ bin
 *.pyc
 hello.vapi
 setup.sh
+.env

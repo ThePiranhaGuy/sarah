@@ -29,6 +29,7 @@ gi.require_version('Peas', '1.0')
 gi.require_version('Sarah', '1.0')
 from gi.repository import GObject, Peas, Sarah
 apikey = os.getenv("API_KEY")
+dotenv.load_dotenv()
 omdb.set_default('apikey', apikey)
 
 class WatchPlugin(GObject.Object, Sarah.IExtension):
@@ -38,15 +39,15 @@ class WatchPlugin(GObject.Object, Sarah.IExtension):
 
     def do_activate(self, args, argv):
        movie = omdb.title(' '.join(args).strip())
-       print("Name : "+movie.title)
-       print("Year of Releasing : "+movie.year)
-       print("Movie or Series : "+movie.type)
-       print("Genre : "+movie.genre)
-       print("Cast : "+movie.actors)
-       if (float(movie.imdb_rating) < 5.0):	
-              print("I Won't Watch This Because its only "+movie.imdb_rating+" on imdb")
+       print("Name : "+movie['title'])
+       print("Year of Releasing : "+movie['year'])
+       print("Movie or Series : "+movie['type'])
+       print("Genre : "+movie['genre'])
+       print("Cast : "+movie['actors'])
+       if (float(movie['imdb_rating']) < 5.0):	
+              print("I Won't Watch This Because its only "+movie['imdb_rating']+" on imdb")
        else:
-              print("Ok I will watch it because it got "+movie.imdb_rating+" on imdb")
+              print("Ok I will watch it because it got "+movie['imdb_rating']+" on imdb")
 
     def do_deactivate(self):
        pass

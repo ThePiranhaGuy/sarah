@@ -33,7 +33,7 @@ class HiPlugin(GObject.Object, Sarah.IExtension):
     object = GObject.property(type=GObject.Object)
 
     def do_activate(self, args, argv):
-        print("hello form Python plugIn", args)
+        print("Hello from Python plugIn", ''.join(args))
 
     def do_deactivate(self):
         pass

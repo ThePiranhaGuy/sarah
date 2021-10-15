@@ -28,8 +28,8 @@ import os
 gi.require_version('Peas', '1.0')
 gi.require_version('Sarah', '1.0')
 from gi.repository import GObject, Peas, Sarah
-apikey = os.getenv("API_KEY")
 dotenv.load_dotenv()
+apikey = os.getenv("API_KEY")
 omdb.set_default('apikey', apikey)
 
 class WatchPlugin(GObject.Object, Sarah.IExtension):

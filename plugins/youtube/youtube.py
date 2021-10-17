@@ -34,7 +34,7 @@ class YoutubePlugin(GObject.Object, Sarah.IExtension):
     object = GObject.property(type=GObject.Object)
 
     def do_activate(self, args, argv):
-       url = "https://www.youtube.com/results?search_query="+' '.join(args)
+       url = "https://www.youtube.com/results?search_query="+''.join(args)
        webbrowser.open_new_tab(url)
 
     def do_deactivate(self):
